@@ -1,0 +1,4 @@
+---
+title: inequality
+layout: tags
+---

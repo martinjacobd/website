@@ -1,0 +1,14 @@
+{% include header.inc %}
+<div id="mainart">
+<div class="article">
+  <h1>Posts in "{{ page.title}}"</h1>
+  <ul style="list-style-type: none;">
+	{% for post in site.posts %}
+	{% if post.tags contains page.title %}
+	<li><a href="{{ post.url}}">{{ post.title }}</a> on {{ post.date | date: "%B %d, %Y" }}</li>
+	{% endif %}
+	{% endfor %}
+  </ul>
+</div>
+</div>
+{% include footer.inc %}
