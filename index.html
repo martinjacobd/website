@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<div class="column" style="float: left;">
+  <div class="header"><a href="/otherworldliness/">Otherworldliness</a></div>
+  <div class="article" style="margin-top: 0;">
+	<p style="font-size: .6em; color: gray">Thoughts on film and philosophy</p>
+  </div>
+  {% for post in site.categories.otherworldliness limit:5 %}
+  <article>
+	<div class="article">
+	  {% if post.image %}{{post.image}}{% endif %}
+			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+	  <p class="byline"> by {{ post.author }} on
+		{{ post.date | date: "%B %d, %Y" }}</p>
+	  <p>{% if post.summary %} {{ post.summary }} <a href="{{ post.url }}" class="more">Read More &hellip;</a> {% else %} {{ post.content }} {% endif %}</p>
+	</div>
+  </article>
+  {% endfor %}
+</div>
+<div class="column">
+  <div class="header"><a href="/worldliness/">Worldliness</a></div>
+  <div class="article" style="margin-top: 0;">
+	<p style="font-size: .6em; color: gray">Thoughts on finance, economics, and politics</p>
+  </div>
+  {% for post in site.categories.worldliness limit:5 %}
+  <article>
+	<div class="article">
+		  {% if post.image %}{{ post.image}}{% endif %}
+		  
+		  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+		  <p class="byline"> by {{ post.author }} on
+			{{ post.date | date: "%B %d, %Y" }}</p>
+		  <p>{% if post.summary %} {{ post.summary }} <a href="{{ post.url }}" class="more">Read More &hellip;</a> {% else %} {{ post.content }} {% endif %}</p>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+<div class="column">
+  <div class="header"><a href="/tech/">Technicalities</a></div>
+  <div class="article" style="margin-top: 0;">
+	<p style="font-size: .6em; color: gray">Thoughts on technology and math</p>
+  </div>
+  {% for post in site.categories.tech limit:5 %}
+  <article>
+    <div class="article">
+	  {% if post.image %}{{ post.image }}{% endif %}
+	  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+	  <p class="byline"> by {{ post.author }} on
+        {{ post.date | date: "%B %d, %Y" }}</p>
+	  <p>{% if post.summary %} {{ post.summary }} <a href="{{ post.url }}" class="more">Read More &hellip;</a> {% else %} {{ post.content }} {% endif %}</p>
+    </div>
+  </article>
+  {% endfor %}
+</div>
