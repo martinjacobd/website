@@ -1,0 +1,34 @@
+#lowerpage {
+	width: 90%;
+	margin: auto;
+	padding: 0;
+	height: 100%;
+	position: relative;
+}
+.column {
+	float: left;
+	margin-bottom: .5em;
+	display: block;
+}
+#content {
+	float: left;
+	width: 63.5%;
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+#sidecolumn {
+	position: absolute;
+	right: 0;
+	width: 35%;
+}
+.footdiv {
+	position: absolute;
+	right: 0;
+	width: 35%;
+	background-color: #FFFFCC;
+	z-index: 1;
+	padding: 6px;
+	margin: 2px;
+	font-size: .8em;
+}

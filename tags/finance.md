@@ -1,4 +1,0 @@
----
-title: finance
-layout: tags
----

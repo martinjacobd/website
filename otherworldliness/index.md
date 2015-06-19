@@ -1,4 +1,0 @@
----
-title: otherworldliness
-layout: categories
----

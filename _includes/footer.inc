@@ -1,19 +1,16 @@
-</div>
-<div class="column" id="sidecolumn">
-  <div class="header"><a>SideNotes</a></div>
-  <div class="sidecol">
-	<h1>Recent Posts</h1>
-		<ul>
-		  {% for post in site.posts limit:5 %}
-		  <li><a href="{{ post.url}}">{{ post.title }}</a></li>
-		  {% endfor %}
-		  <li><a href="/archives.html">Archives</a></li>
-		</ul>
-  </div>
-</div>
-<div id="footer">
+</section>
+<section class="column" id="sidecolumn">
+  <header><h2><a>SideNotes</a></h2></header>
+  <aside>
+    <header><h2>Popular Pages</h2></header>
+    <ul>
+      <li><a href="/math/paper.html">Paper on Minimal Surfaces in de Sitter 3-space</a></li>
+    </ul>
+  </aside>
+</section>
+<footer>
   <p>Copyright &copy; Jacob Martin, 2015</p>
-</div>
+</footer>
 </div>
 </body>
 </html>

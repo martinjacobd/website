@@ -1,4 +1,0 @@
----
-title: geometry
-layout: tags
----

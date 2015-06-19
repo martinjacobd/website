@@ -1,11 +1,8 @@
 ---
 title: Timelike Surfaces of Revolution Paper Accepted
-category: tech
 author: Jacob Martin
-shortauthor: jacob
 layout: default
-tags: math geometry
-summary: I was the secondary author on a paper "Timelike Surfaces of Revolution with Constant Mean Curvature in de Sitter 3-space" with Dr. Sung Lee at the University of Southern Mississippi.  This paper was recently accepted into the International Electronic Journal of Geometry (Vol. 8, No. 1 (2015)) &hellip;
+math: yes
 ---
 I was the secondary author on a paper "Timelike Surfaces of Revolution with Constant Mean Curvature in de Sitter 3-space" ([preprint](http://www.math.usm.edu/lee/tlcmcrevds.pdf)) with [Dr. Sung Lee](http://www.math.usm.edu/lee/) at the University of Southern Mississippi.  This paper was recently accepted into the [International Electronic Journal of Geometry](http://www.iejgeo.com/main.php) (Vol. 8, No. 1 (2015)).
 

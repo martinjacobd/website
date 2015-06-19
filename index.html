@@ -1,55 +1,28 @@
 ---
 layout: default
 ---
-<div class="column" style="float: left;">
-  <div class="header"><a href="/otherworldliness/">Otherworldliness</a></div>
-  <div class="article" style="margin-top: 0;">
-	<p style="font-size: .6em; color: gray">Thoughts on film and philosophy</p>
-  </div>
-  {% for post in site.categories.otherworldliness limit:5 %}
-  <article>
-	<div class="article">
-	  {% if post.image %}{{post.image}}{% endif %}
-			<h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-	  <p class="byline"> by {{ post.author }} on
-		{{ post.date | date: "%B %d, %Y" }}</p>
-	  <p>{% if post.summary %} {{ post.summary }} <a href="{{ post.url }}" class="more">Read More &hellip;</a> {% else %} {{ post.content }} {% endif %}</p>
-	</div>
-  </article>
-  {% endfor %}
-</div>
 <div class="column">
-  <div class="header"><a href="/worldliness/">Worldliness</a></div>
-  <div class="article" style="margin-top: 0;">
-	<p style="font-size: .6em; color: gray">Thoughts on finance, economics, and politics</p>
-  </div>
-  {% for post in site.categories.worldliness limit:5 %}
+  <header><h2>Pages</h2></header>
   <article>
-	<div class="article">
-		  {% if post.image %}{{ post.image}}{% endif %}
-		  
-		  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-		  <p class="byline"> by {{ post.author }} on
-			{{ post.date | date: "%B %d, %Y" }}</p>
-		  <p>{% if post.summary %} {{ post.summary }} <a href="{{ post.url }}" class="more">Read More &hellip;</a> {% else %} {{ post.content }} {% endif %}</p>
-    </div>
+	<section class="frontlist">
+	  <h2>Math things</h2>
+	  <ul>
+		<li><a href="/math/paper.html">Published paper on Minimal Surfaces in de Sitter 3-space</a></li>
+	  </ul>
+	</section>
+	<section class="frontlist">
+	  <h2>Handouts, Reference info, Etc.</h2>
+	  <ul>
+		<li><a href="/handouts/parametric.html">Parametric Equations</a></li>
+		<li><a href="/handouts/lordsprayer.html">Pamphlet on the Lord's Prayer</a></li>
+	  </ul>
+	</section>
+	<section class="frontlist">
+	  <h2>Miscellaneous</h2>
+	  <ul>
+		<li><a href="/other/bazin.html">Film Criticism Regarding Bazin's Ontology</a></li>
+	  </ul>
+	</section>
+	<div style="clear: both;"></div>
   </article>
-  {% endfor %}
-</div>
-<div class="column">
-  <div class="header"><a href="/tech/">Technicalities</a></div>
-  <div class="article" style="margin-top: 0;">
-	<p style="font-size: .6em; color: gray">Thoughts on technology and math</p>
-  </div>
-  {% for post in site.categories.tech limit:5 %}
-  <article>
-    <div class="article">
-	  {% if post.image %}{{ post.image }}{% endif %}
-	  <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
-	  <p class="byline"> by {{ post.author }} on
-        {{ post.date | date: "%B %d, %Y" }}</p>
-	  <p>{% if post.summary %} {{ post.summary }} <a href="{{ post.url }}" class="more">Read More &hellip;</a> {% else %} {{ post.content }} {% endif %}</p>
-    </div>
-  </article>
-  {% endfor %}
 </div>

@@ -1,4 +1,0 @@
----
-title: worldliness
-layout: categories
----

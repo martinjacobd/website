@@ -1,0 +1,7 @@
+<IfModule mode_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*?)index\.html$ /$1 [L,R=302,NC,NE]
+</IfModule>
