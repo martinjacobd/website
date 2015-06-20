@@ -24,11 +24,19 @@ hr {
 	width: 25%;
 }
 
+p a[href^="/"], p a[href^="http://www.jacobmartin.org/"] {
+	font-weight: bold;
+}
+
 body {
     background-color: silver;
     margin: 0;
     padding: 0;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, Times, "Times New Roman", serif;
+}
+
+.afterquote {
+	clear: right;
 }
 
 body > header {
@@ -198,4 +206,8 @@ footer {
 	list-style: none;
 	margin: 0;
 	padding: 0;
+}
+
+.footnotes li {
+	margin: 1em 0 0 0;
 }
