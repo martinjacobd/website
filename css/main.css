@@ -179,8 +179,9 @@ footer {
 }
 
 .frontlist {
-	float: left;
 	margin-left: 6px;
+	width: 100%;
+	display: block;
 }
 
 .frontlist h2 {
