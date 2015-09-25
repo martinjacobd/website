@@ -17,6 +17,9 @@
 	<script type="text/javascript" src="/scripts/jquery.js"></script>
 	<script type="text/javascript" src="/scripts/footnotes.js"></script>
 	{% endif %}
+	{% if page.code %}
+	<link rel="stylesheet" type="text/css" href="/css/syntax.css" />
+	{% endif %}
   </head>
   <body>
 	<header>

@@ -1,0 +1,171 @@
+---
+author: Jacob Martin
+layout: default
+title:  Build you a Lambda Calculus in Scheme!
+code: yes
+math: yes
+---
+Matt Might has a [wonderful article](http://matt.might.net/articles/implementing-a-programming-language/) on his lovely blog, promising to implement the lambda calculus in seven lines of Scheme! He goes on to implement a 100-line programming language with more features. While his code is lovely, he doesn't explain it much. (Although, I would say that his code is easy and readable.) I've converted his original seven-line language to Common Lisp, and I wish to show *how* he implemented these new features. First, his original code in common lisp.
+
+{% highlight common-lisp %}
+(defun lang/eval (e env)
+  (cond
+   ((symbolp e)     (cadr (assoc e env)))
+   ((eq (car e) '/) (cons e env))
+   (t               (lang/apply (lang/eval (car e) env)
+                                (lang/eval (cadr e) env)))))
+
+(defun lang/apply (f x)
+  (lang/eval (cddr (car f)) (cons (list (cadr (car f)) x) (cdr f))))
+{% endhighlight %}
+
+We can run this in sbcl:
+
+{% highlight sh %}
+This is SBCL 1.2.12.debian, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+This is SBCL 1.2.12.debian, an implementation of ANSI Common Lisp.
+More information about SBCL is available at <http://www.sbcl.org/>.
+
+SBCL is free software, provided as is, with absolutely no warranty.
+It is mostly in the public domain; some portions are provided under
+BSD-style licenses.  See the CREDITS and COPYING files in the
+distribution for more information.
+* 
+((/ A . A))
+* 
+((/ B . B))
+*
+{% endhighlight %}
+
+You will see a warning which you can safely ignore. Such happens with mutually-recursive top-level functions. This is an implementation of the turing-complete lambda calculus. The Lambda Calculus has but three rules: A variable is a valid lambda-term; if \\( t \\) is  a valid lambda-term, then so is \\( (/ x . t) \\); and if \\( t \\) and \\( s \\) are lambda-terms, then so is \\( (t s). \\) (I've used a forward-slash where a lambda would normally be for continuity purposes.)
+
+Lambda-terms like \\( (/ x . t) \\) define unnamed functions which take variables and apply them. For instance, \\( (/ x . x) \\) is the identity function, taking any lambda-term and returning the same. These are applied with juxtaposition. In the lambda-calculus we have defined, this juxtaposition must be wrapped in parentheses.
+
+To see how our interpreter works, we learn the eval function implements the first and second rules. It provides for values and lambda-abstractions or anonymous functions. The apply function implements the third rule and applies lambda-abstractions to values. These, as you can see work off of each other. We've implemented the environments as alists which can convert variables into values. Let’s step-through an evaluation.
+
+{% highlight cl %}
+(lang/eval '((/ a . a) (/ b . b)) nil)
+(apply (eval '(/ a . a) nil)
+       (eval '(/ b . b) nil))
+(apply '((/ a . a) nil) '((/ b . b) nil))
+(eval 'a '(a ((/ b . b) nil)))
+'(/ b . b)
+{% endhighlight %}
+
+First, the evaluator calls the apply function, which evaluates the function to be applied and the applicand. Both of these evaluations produce a closure. These are the lambda terms along with their environments, which at this point do not map any variables. The apply function, then maps the variable in its first argument (i.e., the function to be applied) with the applicand. This produces an environment which is passed along with the expression to the eval function. The eval function then takes the symbol within the expression and uses its environment to map it to the correct expression. Simple, right?
+
+The first way we are going to extend our language is to use hash-tables rather than alists to avoid the \\( O(n) \\) lookup time associated with the latter. We will also make the arguments list in our anonymous functions into a proper list that we may have functions of more than one variable.
+
+{% highlight cl %}
+; Hash tables are annoyingly mutable
+(defun copy-hash-table (table)
+  (let ((newtable (make-hash-table
+                   :test (hash-table-test table)
+                   :size (hash-table-size table))))
+    (maphash (lambda (key value)
+               (setf (gethash key newtable) value))
+             table)
+    newtable))
+
+(defun nilp (e)
+  (eq e nil))
+
+(defun lang/env/setvar (env var val)
+  (setf (gethash var env) val)
+  env)
+
+(defun lang/env/extend (env vars vals)
+  (let* ((newenv (copy-hash-table env))
+         (setenv (lambda (var val)
+                   (lang/env/setvar newenv var val))))
+    (mapcar setenv vars vals)
+    newenv))
+
+(defun lang/eval (e env)
+  (cond
+   ((symbolp e)     (list (car (gethash e env)) env))
+   ((eq (car e) '/) (list e env))
+   (t               (lang/apply (lang/eval (car e) env)
+                                (mapcar (lang/eval/withenv env) (cdr e))))))
+
+(defun lang/apply (f x)
+  (lang/eval (cddr (car f)) (lang/env/extend (cadr f) (cadr (car f)) x)))
+
+(print (lang/eval '((/ (x) . x) (/ (a) . a)) (make-hash-table)))
+{% endhighlight %}
+
+As I stated above, hash tables in lisp aren't the easiest to work with. We want hash tables that aren't muted with lambda abstractions so we can preserve environments above what we're currently working with. The only way we can do this is by copying them. Thank goodness for garbage collection. So we have a couple of administrative functions to handle the hash-tables we are working with. Then, we slightly modify the apply function and eval function so that we work with lists of arguments instead of one argument.
+
+Let's add a let syntax!
+
+{% highlight cl %}
+; Hash tables are annoyingly mutable
+(defun copy-hash-table (table)
+  (let ((newtable (make-hash-table
+                   :test (hash-table-test table)
+                   :size (hash-table-size table))))
+    (maphash (lambda (key value)
+               (setf (gethash key newtable) value))
+             table)
+    newtable))
+
+(defun lang/env/setvar (env var val)
+  (setf (gethash var env) val)
+  env)
+
+(defun lang/env/extend (env vars vals)
+  (let* ((newenv (copy-hash-table env))
+         (setenv (lambda (var val)
+                   (lang/env/setvar newenv var val))))
+    (mapcar setenv vars vals)
+    newenv))
+
+(defun lang/eval (e env)
+  (cond
+   ((symbolp e)       (list (car (gethash e env)) env))
+   ((eq (car e) '/)   (list e env))
+   ((eq (car e) 'let) (lang/eval/let (caddr e) env (cadr e)))
+   (t                 (lang/apply (lang/eval (car e) env)
+                                  (mapcar (lang/eval/withenv env) (cdr e))))))
+
+(defun lang/eval/withenv (env)
+  (lambda (e) (lang/eval e env)))
+
+(defun lang/eval/let (e env binds)
+  (let* ((vars   (mapcar #'car binds))
+         (exps   (mapcar #'cadr binds))
+         (vals   (mapcar (lang/eval/withenv env) exps))
+         (newenv (lang/env/extend env vars vals)))
+    (lang/eval e newenv)))
+
+(defun lang/apply (f x)
+  (lang/eval (cddr (car f)) (lang/env/extend (cadr f) (cadr (car f)) (list x))))
+
+(print (lang/eval '((/ (a) . a) (/ (b) . b)) (make-hash-table)))
+(print (lang/eval '(let ((id (/ (x) . x))) (id (/ (a) . a))) (make-hash-table)))
+{% endhighlight %}
+
+Alright, so we extended this to add a let syntax. When a let form is reached, the eval function calls eval/let, which will create a new environment binding the forms within the let and then calling eval on the expression within the let with this new environment.
+
+In our language, numbers and booleans will be self-evaluating forms, eval will return them with their environment when it encounters them. This is easily implemented as additional conditions within the eval.
+
+{% highlight cl %}
+((or (null e)
+     (eq e t)) (list e env))
+((numberp e)   (list e env))
+{% endhighlight %}
+
+Adding an if statement is similarly easy. Again, adding another cond in the eval definition.
+
+{% highlight cl %}
+((eq (car e) 'if) (if (car (lang/eval (cadr e) env))
+                      (lang/eval (caddr e) env)
+                    (lang/eval (cadddr e) env)))
+{% endhighlight %}
+
