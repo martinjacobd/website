@@ -1,10 +1,6 @@
 ---
 title: Bazin's Ontology and Text Reception
 author: Jacob Martin
-shortauthor: jacob
-category: otherworldliness
-tags: film
-summary: Bazin argues that cinema is objectivity in time—presenting the world as it is seen through time, unlike previous art forms.  He also argues that cinema is a language, which is a necessary implication because the assertion of its objectivity implies cinema is an act of language &hellip; 
 layout: default
 ---
 (N.B.--This essay was originally written as a counter to film theorist André Bazin's assertions that film is the most real and high of the plastic arts.)
