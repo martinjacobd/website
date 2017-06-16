@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="320"
-   height="50"
+   width="341.33334"
+   height="53.333332"
    id="svg2985"
    version="1.1"
-   inkscape:version="0.48.1 r9760"
+   inkscape:version="0.92.0 r15299"
    sodipodi:docname="logo.svg"
-   inkscape:export-filename="/Users/jacobmartin/Projects/Website/images/logo.png"
+   inkscape:export-filename="/home/jacobm/logo.png"
    inkscape:export-xdpi="124.52664"
    inkscape:export-ydpi="124.52664">
   <sodipodi:namedview
@@ -26,23 +26,23 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.2"
-     inkscape:cx="234"
+     inkscape:cx="85.25"
      inkscape:cy="30"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="1280"
-     inkscape:window-height="752"
+     inkscape:window-width="1440"
+     inkscape:window-height="836"
      inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0" />
+     inkscape:window-y="27"
+     inkscape:window-maximized="1" />
   <defs
      id="defs2987">
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath3121">
       <rect
-         style="fill:#d45500;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:3.2829504;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         style="fill:#d45500;fill-opacity:1;fill-rule:nonzero;stroke:#ffffff;stroke-width:3.2829504;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="rect3123"
          width="335.21704"
          height="47.717049"
@@ -66,38 +66,36 @@
      inkscape:groupmode="layer"
      inkscape:label="Layer 1"
      id="layer1"
-     transform="translate(0,-10)">
+     transform="translate(0,-10.666667)">
     <text
-       sodipodi:linespacing="125%"
        id="text3001"
        y="38.333336"
        x="14.166666"
-       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;font-family:Sans"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:50px;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none"
        xml:space="preserve"
        clip-path="url(#clipPath3121)"
-       transform="translate(-5.8333333,6.6666667)"><tspan
-         style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;font-family:Garamond;-inkscape-font-specification:Garamond"
+       transform="matrix(1.0666667,0,0,1.0666667,-6.2222222,7.1111111)"><tspan
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:48px;line-height:50px;font-family:'Linux Libertine O';-inkscape-font-specification:'Linux Libertine O Bold';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ff0000"
          y="38.333336"
          x="14.166666"
          id="tspan3003"
          sodipodi:role="line"><tspan
            id="tspan3021"
-           style="font-size:48px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;writing-mode:lr-tb;text-anchor:start;fill:#4d4d4d;font-family:Garamond;-inkscape-font-specification:Garamond"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:48px;line-height:50px;font-family:'Linux Libertine O';-inkscape-font-specification:'Linux Libertine O Bold';text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#4d4d4d"
            dy="0 0 0 0 0 0 0 0 0 0 0"
-           dx="0 0 0 0 0 0 0 0 0 0 0"><tspan
-             style="font-size:48px;font-style:normal;font-weight:bold;baseline-shift:baseline;-inkscape-font-specification:Garamond Bold"
-             id="tspan3091">J<tspan
-   style="font-size:32px"
+           dx="0 0 0 0 0 0 0 0 0 0 0">J<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;line-height:50px;font-family:'Linux Libertine O';-inkscape-font-specification:'Linux Libertine O Bold'"
    id="tspan3113"
    dx="-1.73"
-   dy="-10">ACOB</tspan></tspan><tspan
-             style="font-size:48px;font-style:normal;font-weight:bold;baseline-shift:baseline;fill:#d45500;-inkscape-font-specification:Garamond Bold"
-             id="tspan3083"
-             dy="10">M<tspan
-   style="font-size:32px"
+   dy="-10">ACOB</tspan><tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:48px;line-height:50px;font-family:'Linux Libertine O';-inkscape-font-specification:'Linux Libertine O Bold';baseline-shift:baseline;fill:#d45500"
+   id="tspan3083"
+   dy="10">M<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:32px;line-height:50px;font-family:'Linux Libertine O';-inkscape-font-specification:'Linux Libertine O Bold'"
    id="tspan3109"
-   dy="-10">ARTIN<tspan
-   style="fill:#4d4d4d"
+   dy="-10"
+   dx="-2">ARTIN<tspan
+   style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:50px;font-family:'Linux Libertine O';-inkscape-font-specification:'Linux Libertine O Bold';fill:#4d4d4d"
    id="tspan3150">.org</tspan></tspan></tspan></tspan></tspan></text>
   </g>
 </svg>

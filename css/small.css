@@ -1,16 +1,17 @@
 #lowerpage {
-	width: 99%;
+	width: auto;
 	margin: 0;
 	position: static;
 }
 .column {
 	float: left;
-	width: 100%;
+	width: auto;
 	margin: 0;
 	margin-top: 2px;
 	margin-bottom: 0;
 	margin-left: 0;
 	margin-right: 0;
+	padding: 0;
 }
 #content {
 	width: 100%;
@@ -23,9 +24,11 @@
 	position: static;
 	width: 100%;
 	float: left;
+	padding: 0;
 }
 html {
 	font-size: 24pt;
+	padding: 0;
 }
 .footdiv {
 	width: 96%;
@@ -36,4 +39,7 @@ html {
 	margin: 0;
 	font-size: .8em;
 	color: black;
+}
+p {
+	text-align: left;
 }

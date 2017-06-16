@@ -1,6 +1,6 @@
 ---
 ---
-{% include header.inc %}
+{% include header.html %}
 {% if page.title %}
 <header style="display: none;"><h2>{{page.title}}</h2></header>
 <article>
@@ -12,4 +12,4 @@
 {% else %}
 {{ content }}
 {% endif %}
-{% include footer.inc %}
+{% include footer.html %}
