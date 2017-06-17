@@ -162,7 +162,7 @@ h4 {
 
 #sidecolumn h2 {
 	color: #D45500;
-	font-size: 1em;
+	font-size: 1.4em;
 	margin: .1em 0 .2em 0;
 }
 
@@ -187,10 +187,13 @@ footer {
 	width: 100%;
 	background-color: white;
 	border-top: 1px solid black;
-	padding: .5em 0 .5em .5em;
 	clear: both;
 	display: block;
 	margin: auto;
+}
+
+footer p {
+	padding: 0.5em 0 0.5em 0.5em;
 }
 
 .frontlist {
