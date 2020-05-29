@@ -2,6 +2,7 @@
 title: The Beginning of My Weight Loss Journey
 category: diet
 author: Jacob Martin
+layout: default
 ---
 > Note: I am not a doctor and couldn't give medical advice even if I wanted to. This is about *my* journey, and you should not extrapolate it to yours without consulting actual physicians and dieticians and so forth.
 

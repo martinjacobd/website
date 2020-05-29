@@ -142,12 +142,6 @@ blockquote {
 	color: #008087;
 }
 
-blockquote + p {
-	float: right;
-	color: #008087;
-	display: block;
-}
-
 h3 {
 	color: black;
 	font-weight: bold;
