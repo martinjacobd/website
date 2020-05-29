@@ -39,6 +39,7 @@ With this in mind, and after consulting several of my clinicians, I came up a pl
    2. Try carb-cycling (5 days of increase carbohydrate consumption followed by 5 days of "strict keto").
    3. Try carb-loading (eating a lot of carbohydrate in one bolus before an intensive aerobic or anaerobic workout).
    4. ??? Whatever I find that is appealing and scientifically-supported (or at least mechanistically possible to help).
+
 In the midst of this, I shall have to "exercise more." Yes, that is very vague. I have a bike which I will continue to ride. And (fingers crossed) I should be able to buy enough free weights for a home gym soon. But one way or the other, my depression and lethargy being what it is, I'm not holding my breath that I will immediately be able to exercise much more.
 
 Time will tell whether this helps.
