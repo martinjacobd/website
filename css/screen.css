@@ -13,13 +13,13 @@
 #content {
 	float: left;
 	width: 63.5%;
-	margin: 0;
-	padding: 0;
-	display: block;
+	max-width: 500px;
+	margin-left: 7px;
+	margin-top: 0;
 }
 #sidecolumn {
-	position: absolute;
-	right: 0;
+	float: left;
+	left: 0;
 	width: 35%;
 }
 .footdiv {

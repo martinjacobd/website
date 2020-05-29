@@ -1,6 +1,35 @@
 /* The following file is released under the CC0 license available at
    http://creativecommons.org/publicdomain/zero/1.0/ */
 
+/* use Charis SIL - Regular in .woff format */
+@font-face {
+  font-family: CharisSILW;
+  src: url(/fonts/CharisSIL-R.woff2) format('woff2'),
+       url(/fonts/CharisSIL-R.woff)  format('woff');
+}
+/* use Charis SIL - Italic in .woff format */
+@font-face {
+  font-family: CharisSILW;
+  font-style: italic;
+  src: url(/fonts/CharisSIL-I.woff2) format('woff2'),
+       url(/fonts/CharisSIL-I.woff)  format('woff');
+}
+
+@font-face {
+	font-family: CharisSILW;
+	font-weight: bold;
+	src: url(/fonts/CharisSIL-B.woff2) format('woff2'),
+	     url(/fonts/CharisSIL-B.woff)  format('woff');
+}
+
+@font-face {
+	font-family: CharisSILW;
+	font-weight: bold;
+	font-style: italic;
+	src: url(/fonts/CharisSIL-BI.woff2) format('woff2'),
+	     url(/fonts/CharisSIL-BI.woff)  format('woff');
+}
+
 article, section, nav, aside, div, footer {
 	margin: 0;
 	padding: 0;
@@ -32,7 +61,7 @@ body {
     background-color: silver;
     margin: 0;
     padding: 0;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Georgia, Times, "Times New Roman", serif;
+    font-family: CharisSILW, "Palatino Linotype", "Book Antiqua", Palatino, Georgia, Times, "Times New Roman", serif;
 }
 
 .afterquote {

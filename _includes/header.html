@@ -7,8 +7,8 @@
 	<link rel="stylesheet" type="text/css" href="/css/screen.css"
 		  media="only screen and (min-width: 481px)" />
 	<link rel="stylesheet" type="text/css" href="/css/small.css"
-		  media="only screen and (max-width: 480px),
-				 only screen and (min-width: 560px) and (max-width: 1136px) and (-webkit-min-device-pixel-ratio: 2)" />
+		  media="only screen and (max-device-width: 480px),
+				 only screen and (min-device-width: 560px) and (max-device-width: 1136px) and (-webkit-min-device-pixel-ratio: 2)" />
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
 	<link rel="icon" type="image/x-icon" href="/favicon.png" />
 	{% if page.math %}<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>{% endif %}
@@ -33,4 +33,13 @@
 	  <div style="clear: both;"></div>
 	</header>
 	<div id="lowerpage">
+	<section class="column" id="sidecolumn">
+	  <header><h2><a>SideNotes</a></h2></header>
+	  <aside>
+	    <header><h2>Popular Pages</h2></header>
+	    <ul>
+	      <li><a href="/math/paper.html">Paper on Minimal Surfaces in de Sitter 3-space</a></li>
+	    </ul>
+	  </aside>
+	</section>
 	  <section id="content">
