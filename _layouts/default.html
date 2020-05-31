@@ -2,9 +2,9 @@
 ---
 {% include header.html %}
 {% if page.title %}
-<header style="display: none;"><h2>{{page.title}}</h2></header>
+<header style="display: none;"><h1>{{page.title}}</h1></header>
 <article>
-  <header><h2>{{ page.title }}</h2></header>
+  <header><h1>{{ page.title }}</h1></header>
   <p class="byline">{% if page.author %} by {{ page.author }} {% endif %} {% if page.date %} on {{ page.date | date: "%A, %B %d, %Y" }} {% endif %}</p>
   {% if page.image %} {{ page.image }} {% endif %}
   {{ content }}

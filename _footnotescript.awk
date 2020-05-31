@@ -4,7 +4,7 @@ BEGIN {
 }
 
 {
-	while (match($0, /\[[^]]*\]/)) {
+	while (match($0, /\{[^\}]*\}/)) {
 		n++;
 		note[n] = substr($0, RSTART+1, RLENGTH-2);
 		if (RLENGTH < 350) {
@@ -13,7 +13,7 @@ BEGIN {
 			title = substr(note[n], 1, 340) "...";
 		}
 		gsub(/<[^>]*>/, "", title);
-		sub(/\[[^]]*\]/, "<a class=\"footref\" id\=\"ref" n "\" href=\"\#note" n "\" title=\"" title "\">" n "</a>");
+		sub(/\{[^}]*\}/, "<a class=\"footref\" id=\"ref" n "\" href=\"#note" n "\" title=\"" title "\">" n "</a>");
 	}
 	print $0;
 }

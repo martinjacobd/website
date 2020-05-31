@@ -121,10 +121,15 @@ article, aside {
 	margin: .4em 0 .4em 0;
 }
 
-article h2, header h2 {
+article h1, header h1 {
 	color: #D45500;
 	font-size: 1.4em;
 	margin: .1em 0 .2em 0;
+}
+
+article h2 {
+	color: black;
+	font-size: 1.2em;
 }
 
 article aside {
@@ -138,6 +143,12 @@ article aside {
 article p {
 	margin-bottom: 1em;
 	text-align: justify;
+}
+
+article img {
+	width: 100%;
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 aside.right {
@@ -262,5 +273,7 @@ th, td {
 }
 .caption {
     color: #008087;
-    text-align: center;
+    font-size: 0.8em;
+    margin-top: 0;
+    padding-top: 3px;
 }
