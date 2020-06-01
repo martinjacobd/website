@@ -277,3 +277,16 @@ th, td {
     margin-top: 0;
     padding-top: 3px;
 }
+#markdown-toc::before {
+	content: "Contents:";
+	font-weight: bold;
+}
+#markdown-toc {
+	border: 1px solid black;
+	padding-right: 1.5em;
+	display: inline-block;
+	list-style-type: none;
+}
+#markdown-toc ul {
+	list-style-type: none;
+}
