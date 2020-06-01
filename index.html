@@ -1,14 +1,12 @@
 ---
 layout: default
 ---
-<div class="column" style="width: 100%;">
-  <header><h2>Pages</h2></header>
+<header><h1><a>Pages</a></h1></header>
   <article>
-  	<header style="display: none"><h2>Pages</h2></header>
 	<section class="frontlist">
 	  <header><h2>My Personal Diet Journey</h2></header>
 	  <ul>
-		  {% for post in site.posts %}
+		  {% for post in site.posts | reverse %}
 		  {% if post.categories contains "diet" %}<li><a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
 		  {% endfor %}
 	  </ul>
@@ -16,11 +14,10 @@ layout: default
 	<section class="frontlist">
 	  <header><h2>General Nutrition Information</h2></header>
 	  <ul>
-		  {% for post in site.posts %}
+		  {% for post in site.posts | reverse %}
 		  {% if post.categories contains "nutrition" %}<li><a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
 		  {% endfor %}
 	  </ul>
 	</section>
 	<div style="clear: both;"></div>
   </article>
-</div>

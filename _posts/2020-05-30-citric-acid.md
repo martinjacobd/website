@@ -2,7 +2,7 @@
 author: Jacob Martin
 category: nutrition
 layout: default
-title: Aerobic Respiration, the Citric Acid Cycle, and the Electron Tranpsport Chain
+title: Aerobic Respiration, the Citric Acid Cycle, and the Electron Transport Chain
 footnotes: yes
 ---
 Oxidation of nutrients reduces ADP (adenosine diphosphate) to ATP (adenosine triphosphate). You may have heard your biology textbook or a doctor refer to ATP as the "energy currency of the cell." And that is an adequate explanation. Your body needs ATP to move ions in adverse gradients ("uphill"), tense muscles, move, etc. If a human body goes one second without ATP, it dies. In fact, cyanide works by hijacking one step in the process of production of ATP. The most common way of manufacturing ATP in the human body is aerobic respiration, which we will go over in this article. The other two ways are lactic acid fermentation and the creatine kinase system, which will be the subjects of future posts.
