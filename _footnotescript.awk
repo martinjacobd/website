@@ -1,4 +1,4 @@
-#!/usr/bin/awk -f
+#!/usr/bin/gawk -f
 BEGIN {
 	n = 0;
 }
@@ -6,15 +6,30 @@ BEGIN {
 {
 	while (match($0, /\|[^\|]*\|/)) {
 		n++;
-		note[n] = substr($0, RSTART+1, RLENGTH-2);
-		if (RLENGTH < 350) {
-			title = note[n];
-		} else {
-			title = substr(note[n], 1, 340) "...";
+
+		command = "pandoc -f markdown -t html";
+		print substr($0, RSTART+1, RLENGTH-2) |& command;
+		close(command, "to");
+		note[n] = "";
+		while ((command |& getline line) > 0) {
+			note[n] = note[n] line;
 		}
-		gsub(/<[^>]*>/, "", title);
+		close(command);
+
+		gsub(/<p>/, "", note[n]);
+		gsub(/<\/p>/, "", note[n]);
+
+		title = note[n];
 		gsub(/"/, "", title);
-		sub(/\|[^\|]*\|/, "<a class=\"footref\" id=\"ref" n "\" href=\"#note" n "\" title=\"" title "\">" n "</a>");
+		gsub(/<[^>]*>/, "", title);
+		if (length(title) > 350) {
+			title = substr(title, 1, 347) "...";
+		}
+		gsub(/&/, "\\\\&", title);
+
+		gsub(/\|[^\|]*\|/,
+			"<a class=\"footref\" id=\"ref" n "\" href=\"#note" n "\" title=\"" title "\">" n "</a>",
+			$0);
 	}
 	print $0;
 }

@@ -1,15 +1,67 @@
----
----
-{% include header.html %}
-{% if page.title %}
-<header style="display: none;"><h1>{{page.title}}</h1></header>
-<article>
-	<header><h1>{{ page.title }}</h1></header>
-	<p class="byline">{% if page.author %} by {{ page.author }} {% endif %} {% if page.date %} on {{ page.date | date: "%A, %B %d, %Y" }} {% endif %}</p>
-	{% if page.image %} {{ page.image }} {% endif %}
-	{{ content }}
-</article>
-{% else %}
-{{ content }}
-{% endif %}
-{% include footer.html %}
+<!DOCTYPE html>	
+<html lang="en">	  
+	<head>  
+		<title>{% if page.title %} {{ page.title }} | {% endif %} {% if page.categories %} {{ page.categories | join: ", " }} || {% endif %}JacobMartin.org</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="/css/main.css" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon.png" />
+		<link rel="icon" type="image/x-icon" href="/favicon.png" />
+		{% if page.math %}<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>{% endif %}
+		{% if page.footnotes %}
+		<script type="text/javascript" src="/scripts/jquery.js"></script>
+		<script type="text/javascript" src="/scripts/footnotes.js"></script>
+		{% endif %}
+		{% if page.code %}
+		<link rel="stylesheet" type="text/css" href="/css/syntax.css" />
+		{% endif %}
+	</head>
+	<body>
+		<header>
+			<h1 id="logo"><a href="/"><img src="/images/logo.png" alt="JacobMartin.org" width="320"></a></h1>
+			<nav id="topnav">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/about.html">About</a></li>
+					<li><a href="/copyright.html">Legal</a></li>
+				</ul>
+			</nav>
+			<div style="clear: both;"></div>
+		</header>
+		<div id="lowerpage">
+			<section class="column" id="sidecolumn">
+				<header><h2><a>Side Notes</a></h2></header>
+				<aside>
+					<h3 style="margin-bottom: 0; padding-bottom: 1px; color: #D45500;">My Personal Diet Journey</h3>
+					<ul style="margin-top: 2px; padding-top: 0;">
+						{% for post in site.posts %}
+						{% if post.categories contains "Diet" %}<li><a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
+						{% endfor %}
+					</ul>
+					<h3 style="margin-bottom: 0; padding-bottom: 1px; color: #D45500;">General Nutrition Information</h3>
+					<ul style="margin-top: 2px; padding-top: 0;">
+						{% for post in site.posts %}
+						{% if post.categories contains "Nutrition" %}<li><a href="{{ post.url }}">{{ post.title }}</a></li>{% endif %}
+						{% endfor %}
+					</ul>
+				</aside>
+				<div style="clear: both;"></div>
+			</section>
+			<section id="content" class="column">
+				{% if page.title %}
+				<header style="display: none;"><h1>{{page.title}}</h1></header>
+				<article>
+					<header><h1>{{ page.title }}</h1></header>
+					<p class="byline">{% if page.author %} by {{ page.author }} {% endif %} {% if page.date %} on {{ page.date | date: "%A, %B %d, %Y" }} {% endif %}</p>
+					{% if page.image %} {{ page.image }} {% endif %}
+					{{ content }}
+				</article>
+				{% else %}
+				{{ content }}
+				{% endif %}
+			</section>
+			<footer>
+				<p>Copyright &copy; Jacob Martin, 2015&ndash;2020</p>
+			</footer>
+		</div>
+	</body>
+</html>

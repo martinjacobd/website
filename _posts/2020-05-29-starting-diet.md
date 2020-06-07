@@ -1,6 +1,6 @@
 ---
 title: The Beginning of My Weight Loss Journey
-category: diet
+category: Diet
 author: Jacob Martin
 layout: default
 ---

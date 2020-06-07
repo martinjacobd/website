@@ -1,10 +1,10 @@
 ---
 title: The Beginning of My Weight Loss Journey
-category: diet
+category: Diet
 author: Jacob Martin
 layout: default
 ---
-> Note: I am not a doctor and couldn't give medical advice even if I wanted to. This is about *my* journey, and you should not extrapolate it to yours without consulting actual physicians and dieticians and so forth.
+{% include disclaimer.md %}
 
 Since I was a little kid, I was self-conscious about my weight. I was usually bigger than others in school--probably not big enough to be "obese" but it was definitely noticeable. Furthermore, I was always very intelligent, and I used this as an excuse never to exercise. Of course, I thought that I would be doing intellectual work and that exercise was unimportant. Then, when I was 16-18, I lost a bunch of weight, without even trying. My parents and relatives blamed this on a growth spurt, and I didn't know better. I now believe this was the first manifestation of my hyperthyroidism (specifically, Grave's Disease) that would go undiagnosed for another six years.
 

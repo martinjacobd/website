@@ -1,25 +1,25 @@
 /* The following file is released under the CC0 license available at
-   http://creativecommons.org/publicdomain/zero/1.0/ */
+http://creativecommons.org/publicdomain/zero/1.0/ */
 
 /* use Charis SIL - Regular in .woff format */
 @font-face {
-  font-family: CharisSILW;
-  src: url(/fonts/CharisSIL-R.woff2) format('woff2'),
-       url(/fonts/CharisSIL-R.woff)  format('woff');
+	font-family: CharisSILW;
+	src: url(/fonts/CharisSIL-R.woff2) format('woff2'),
+	url(/fonts/CharisSIL-R.woff)  format('woff');
 }
 /* use Charis SIL - Italic in .woff format */
 @font-face {
-  font-family: CharisSILW;
-  font-style: italic;
-  src: url(/fonts/CharisSIL-I.woff2) format('woff2'),
-       url(/fonts/CharisSIL-I.woff)  format('woff');
+	font-family: CharisSILW;
+	font-style: italic;
+	src: url(/fonts/CharisSIL-I.woff2) format('woff2'),
+	url(/fonts/CharisSIL-I.woff)  format('woff');
 }
 
 @font-face {
 	font-family: CharisSILW;
 	font-weight: bold;
 	src: url(/fonts/CharisSIL-B.woff2) format('woff2'),
-	     url(/fonts/CharisSIL-B.woff)  format('woff');
+	url(/fonts/CharisSIL-B.woff)  format('woff');
 }
 
 @font-face {
@@ -27,7 +27,7 @@
 	font-weight: bold;
 	font-style: italic;
 	src: url(/fonts/CharisSIL-BI.woff2) format('woff2'),
-	     url(/fonts/CharisSIL-BI.woff)  format('woff');
+	url(/fonts/CharisSIL-BI.woff)  format('woff');
 }
 
 article, section, nav, aside, div, footer {
@@ -36,8 +36,8 @@ article, section, nav, aside, div, footer {
 }
 
 header, p, h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 a:visited {
@@ -58,10 +58,10 @@ p a[href^="/"], p a[href^="http://www.jacobmartin.org/"] {
 }
 
 body {
-    background-color: silver;
-    margin: 0;
-    padding: 0;
-    font-family: CharisSILW, "Palatino Linotype", "Book Antiqua", Palatino, Georgia, Times, "Times New Roman", serif;
+	background-color: silver;
+	margin: 0;
+	padding: 0;
+	font-family: CharisSILW, "Palatino Linotype", "Book Antiqua", Palatino, Georgia, Times, "Times New Roman", serif;
 }
 
 .afterquote {
@@ -69,10 +69,10 @@ body {
 }
 
 body > header {
-    background-color: white;
-    padding-top: .5em;
-    padding-left: .5em;
-    min-width: 310px;
+	background-color: white;
+	padding-top: .5em;
+	padding-left: .5em;
+	min-width: 310px;
 	display: block;
 }
 
@@ -160,17 +160,17 @@ aside.left {
 }
 
 aside.picright {
-    width: auto;
-    padding: 15px;
-    float: right;
-    border: none;
+	width: auto;
+	padding: 15px;
+	float: right;
+	border: none;
 }
 
 aside.picleft {
-    width: auto;
-    padding: 15px;
-    float: left;
-    border: none;
+	width: auto;
+	padding: 15px;
+	float: left;
+	border: none;
 }
 
 aside p {
@@ -201,8 +201,8 @@ h4 {
 }
 
 #sidecolumn ul {
-	 list-style-type: none;
-	 padding: 0;
+	list-style-type: none;
+	padding: 0;
 }
 
 #sidecolumn ul li a {
@@ -215,7 +215,6 @@ h4 {
 	text-align: left;
 	margin-bottom: .3em;
 }
-
 
 footer {
 	width: 100%;
@@ -262,34 +261,40 @@ footer p {
 }
 
 .footnotes li {
-    margin: 1em 0 0 0;
+	margin: 1em 0 0 0;
 }
 
 table {
-    margin: 0 auto;
+	margin: 0 auto;
 }
+
 th, td {
-    padding: 3px;
+	padding: 3px;
 }
+
 .caption {
-    color: #008087;
-    font-size: 0.8em;
-    margin-top: 0;
-    padding-top: 3px;
+	color: #008087;
+	font-size: 0.8em;
+	margin-top: 0;
+	padding-top: 3px;
 }
+
 #markdown-toc::before {
 	content: "Contents:";
 	font-weight: bold;
 }
+
 #markdown-toc {
 	border: 1px solid black;
 	padding-right: 1.5em;
 	display: inline-block;
 	list-style-type: none;
 }
+
 #markdown-toc ul {
 	list-style-type: none;
 }
+
 #lowerpage {
 	width: 90%;
 	margin: auto;
@@ -297,12 +302,14 @@ th, td {
 	height: 100%;
 	position: relative;
 }
+
 .column {
 	position: relative;
 	float: left;
 	margin-bottom: .5em;
 	display: block;
 }
+
 #content {
 	float: left;
 	width: 63.5%;
@@ -311,6 +318,7 @@ th, td {
 	margin-top: 0;
 	min-width: 350px;
 }
+
 #sidecolumn {
 	position: relative;
 	float: left;
@@ -318,6 +326,7 @@ th, td {
 	width: 35%;
 	min-width: 350px;
 }
+
 .footdiv {
 	position: absolute;
 	left: 0;
